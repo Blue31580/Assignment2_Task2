@@ -42,6 +42,10 @@
             android:name=".Quiz.CreateTournament"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Quiz.EditTournament"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

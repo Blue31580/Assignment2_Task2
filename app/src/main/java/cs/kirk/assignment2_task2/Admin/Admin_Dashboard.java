@@ -33,6 +33,7 @@ import java.util.Map;
 
 import cs.kirk.assignment2_task2.Login;
 import cs.kirk.assignment2_task2.Quiz.CreateTournament;
+import cs.kirk.assignment2_task2.Quiz.EditTournament;
 import cs.kirk.assignment2_task2.Quiz.Tournament;
 import cs.kirk.assignment2_task2.Quiz.TournamentAdapter;
 import cs.kirk.assignment2_task2.R;
@@ -70,7 +71,7 @@ public class Admin_Dashboard extends AppCompatActivity {
                 new TournamentAdapter.OnTournamentActionListener() {
                     @Override
                     public void onEdit(Tournament tournament) {
-                        //openEdit(tournament);
+                        openEdit(tournament);
                     }
 
                     @Override
@@ -160,14 +161,14 @@ public class Admin_Dashboard extends AppCompatActivity {
         resultsRef.addValueEventListener(resultsListener);
     }
 
-    /*private void openEdit(Tournament t) {
-        Intent intent = new Intent(Admin_Dashboard.this, Edit_Tournament.class);
+    private void openEdit(Tournament t) {
+        Intent intent = new Intent(Admin_Dashboard.this, EditTournament.class);
         intent.putExtra("id", t.getId());
         intent.putExtra("name", t.getName());
         intent.putExtra("start", t.getStartDate());
         intent.putExtra("end", t.getEndDate());
         startActivity(intent);
-    }*/
+    }
 
     private void confirmDelete(Tournament t) {
         new AlertDialog.Builder(this)

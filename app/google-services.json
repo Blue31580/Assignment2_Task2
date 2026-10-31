@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "698467737448",
+    "firebase_url": "https://iscg7424-assignment2-task2-default-rtdb.firebaseio.com",
+    "project_id": "iscg7424-assignment2-task2",
+    "storage_bucket": "iscg7424-assignment2-task2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698467737448:android:c5ef30f8ac8961cb20c0dd",
+        "android_client_info": {
+          "package_name": "cs.kirk.assignment2_task2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAUOcXf6KEBAIhPsYPKCECzla8agTwf0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

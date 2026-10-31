@@ -1,13 +1,22 @@
 package cs.kirk.assignment2_task2.Quiz;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Question {
+    @SerializedName("type")
     private String type;
+    @SerializedName("difficulty")
+
     private String difficulty;
+    @SerializedName("category")
     private String category;
+    @SerializedName("question")
     private String question;
+    @SerializedName("correct_answer")
     private String correct_answer;
+    @SerializedName("incorrect_answer")
     private List<String> incorrect_answer;
 
     public Question(){

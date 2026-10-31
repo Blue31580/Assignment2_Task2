@@ -37,7 +37,7 @@ public class QuizController implements Callback<QuizResponse> {
     }
 
     @Override
-    public void onResponse(Call<QuizResponse> acll, Response<QuizResponse> response) {
+    public void onResponse(Call<QuizResponse> call, Response<QuizResponse> response) {
         if(response.code() == 429) {
             Log.d("QUIZ_API", "");
             listener.onError("Too many requests");
@@ -75,9 +75,12 @@ public class QuizController implements Callback<QuizResponse> {
         q.setCategory(Uri.decode(q.getDifficulty()));
         q.setQuestion(Uri.decode(q.getQuestion()));
         q.setCorrect_answer(Uri.decode(q.getCorrect_answer()));
+
         List<String> decoded = new ArrayList<>();
-        for(String wrong : q.getIncorrect_answer()) {
-            decoded.add(Uri.decode(wrong));
+        if(q.getIncorrect_answer() != null) {
+            for(String wrong : q.getIncorrect_answer()) {
+                decoded.add(Uri.decode(wrong));
+            }
         }
         q.setIncorrect_answer(decoded);
     }

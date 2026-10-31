@@ -15,9 +15,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import cs.kirk.assignment2_task2.Admin.Admin_Dashboard;
+import cs.kirk.assignment2_task2.Player.Player_Dashboard;
+
 public class Login extends AppCompatActivity {
 
-    public static final String ADMIN_EMAIL = "admin@quiz123.com";
+    public static final String ADMIN_EMAIL = "admin@quiz.com";
     public static final String ADMIN_PASSWORD = "admin123";
 
     private EditText etEmail, etPassword;
@@ -65,21 +68,28 @@ public class Login extends AppCompatActivity {
             Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (email.equalsIgnoreCase(ADMIN_EMAIL) && password.equals(ADMIN_PASSWORD)) {
-            //startActivity(new Intent(Login.this, AdminDashboard.class));
-            finish();
+
+        // Admin email: only the hardcoded password works, Firebase is never asked
+        if (email.equalsIgnoreCase(ADMIN_EMAIL)) {
+            if (password.equals(ADMIN_PASSWORD)) {
+                startActivity(new Intent(Login.this, Admin_Dashboard.class));
+                finish();
+            } else {
+                Toast.makeText(this, "Wrong admin password", Toast.LENGTH_SHORT).show();
+            }
             return;
         }
 
+        // Everyone else: player login through Firebase
         btnLogin.setEnabled(false);
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(authResult -> {
-                    //startActivity(new Intent(Login.this, PlayerDashboard.class));
+                    startActivity(new Intent(Login.this, Player_Dashboard.class));
                     finish();
                 })
                 .addOnFailureListener(e -> {
                     btnLogin.setEnabled(true);
-                    Toast.makeText(this, "Login Failed: " + e.getMessage(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Login Failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
                 });
     }
 }

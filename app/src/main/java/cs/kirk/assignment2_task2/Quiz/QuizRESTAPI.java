@@ -13,4 +13,7 @@ public interface QuizRESTAPI {
             @Query("difficulty") String difficulty,
             @Query("type") String type,
             @Query("encode") String encode);
+
+    @GET("api_category.php")
+    Call<CategoryResponse> getCategories();
 }

@@ -35,17 +35,22 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Player.Player_Dashboard"
+            android:name=".Player.PlayerDashboard"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Quiz.CreateTournament"
+            android:name=".Admin.CreateTournament"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Quiz.EditTournament"
+            android:name=".Admin.EditTournament"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Player.QuizActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

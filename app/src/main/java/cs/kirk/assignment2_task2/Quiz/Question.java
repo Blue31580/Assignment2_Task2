@@ -7,20 +7,23 @@ import java.util.List;
 public class Question {
     @SerializedName("type")
     private String type;
-    @SerializedName("difficulty")
 
+    @SerializedName("difficulty")
     private String difficulty;
+
     @SerializedName("category")
     private String category;
+
     @SerializedName("question")
     private String question;
+
     @SerializedName("correct_answer")
     private String correct_answer;
-    @SerializedName("incorrect_answer")
-    private List<String> incorrect_answer;
 
-    public Question(){
+    @SerializedName("incorrect_answers")
+    private List<String> incorrect_answers;
 
+    public Question() {
     }
 
     public String getType() {
@@ -63,11 +66,11 @@ public class Question {
         this.correct_answer = correct_answer;
     }
 
-    public List<String> getIncorrect_answer() {
-        return incorrect_answer;
+    public List<String> getIncorrect_answers() {
+        return incorrect_answers;
     }
 
-    public void setIncorrect_answer(List<String> incorrect_answer) {
-        this.incorrect_answer = incorrect_answer;
+    public void setIncorrect_answers(List<String> incorrect_answers) {
+        this.incorrect_answers = incorrect_answers;
     }
 }

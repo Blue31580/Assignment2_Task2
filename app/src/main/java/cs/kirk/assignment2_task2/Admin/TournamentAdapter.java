@@ -1,4 +1,4 @@
-package cs.kirk.assignment2_task2.Quiz;
+package cs.kirk.assignment2_task2.Admin;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import cs.kirk.assignment2_task2.Quiz.Tournament;
 import cs.kirk.assignment2_task2.R;
 
 public class TournamentAdapter extends RecyclerView.Adapter<TournamentHolder> {

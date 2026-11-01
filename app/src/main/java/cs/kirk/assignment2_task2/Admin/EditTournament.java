@@ -1,4 +1,4 @@
-package cs.kirk.assignment2_task2.Quiz;
+package cs.kirk.assignment2_task2.Admin;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;

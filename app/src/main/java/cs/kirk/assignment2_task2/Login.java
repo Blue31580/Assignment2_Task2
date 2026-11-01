@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 import cs.kirk.assignment2_task2.Admin.Admin_Dashboard;
-import cs.kirk.assignment2_task2.Player.Player_Dashboard;
+import cs.kirk.assignment2_task2.Player.PlayerDashboard;
 
 public class Login extends AppCompatActivity {
 
@@ -84,7 +84,7 @@ public class Login extends AppCompatActivity {
         btnLogin.setEnabled(false);
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(authResult -> {
-                    startActivity(new Intent(Login.this, Player_Dashboard.class));
+                    startActivity(new Intent(Login.this, PlayerDashboard.class));
                     finish();
                 })
                 .addOnFailureListener(e -> {

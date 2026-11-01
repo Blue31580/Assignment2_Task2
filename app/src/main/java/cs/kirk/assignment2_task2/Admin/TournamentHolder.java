@@ -1,4 +1,4 @@
-package cs.kirk.assignment2_task2.Quiz;
+package cs.kirk.assignment2_task2.Admin;
 
 import android.view.View;
 import android.widget.Button;

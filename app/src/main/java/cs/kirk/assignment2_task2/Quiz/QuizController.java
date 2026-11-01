@@ -77,12 +77,12 @@ public class QuizController implements Callback<QuizResponse> {
         q.setCorrect_answer(Uri.decode(q.getCorrect_answer()));
 
         List<String> decoded = new ArrayList<>();
-        if(q.getIncorrect_answer() != null) {
-            for(String wrong : q.getIncorrect_answer()) {
+        if(q.getIncorrect_answers() != null) {
+            for(String wrong : q.getIncorrect_answers()) {
                 decoded.add(Uri.decode(wrong));
             }
         }
-        q.setIncorrect_answer(decoded);
+        q.setIncorrect_answers(decoded);
     }
 
 }

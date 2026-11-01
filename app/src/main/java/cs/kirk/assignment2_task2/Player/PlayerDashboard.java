@@ -34,7 +34,7 @@ import cs.kirk.assignment2_task2.Login;
 import cs.kirk.assignment2_task2.Quiz.Tournament;
 import cs.kirk.assignment2_task2.R;
 
-public class Player_Dashboard extends AppCompatActivity {
+public class PlayerDashboard extends AppCompatActivity {
 
     private Button btnOnGoing, btnUpcoming, btnPast, btnParticipated, btnLogout;
     private TextView tvWelcome, tvListTitle;
@@ -64,7 +64,7 @@ public class Player_Dashboard extends AppCompatActivity {
         });
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
-            startActivity(new Intent(Player_Dashboard.this, Login.class));
+            startActivity(new Intent(PlayerDashboard.this, Login.class));
             finish();
             return;
         }
@@ -138,7 +138,7 @@ public class Player_Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(Player_Dashboard.this, Login.class));
+                startActivity(new Intent(PlayerDashboard.this, Login.class));
                 finish();
             }
         });
@@ -162,7 +162,7 @@ public class Player_Dashboard extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Player_Dashboard.this, "Load Failed: " + error.getMessage(),
+                Toast.makeText(PlayerDashboard.this, "Load Failed: " + error.getMessage(),
                         Toast.LENGTH_LONG).show();
             }
         };
@@ -186,7 +186,7 @@ public class Player_Dashboard extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Player_Dashboard.this, "Load Failed: " + error.getMessage(),
+                Toast.makeText(PlayerDashboard.this, "Load Failed: " + error.getMessage(),
                         Toast.LENGTH_LONG).show();
             }
         };
@@ -236,9 +236,9 @@ public class Player_Dashboard extends AppCompatActivity {
             Toast.makeText(this, "You can't play this tournament", Toast.LENGTH_SHORT).show();
             return;
         }
-        //Intent intent = new Intent(Player_Dashboard.this, QuizActivity.class);
-        //intent.putExtra("tournamentId", t.getId());
-        //startActivity(intent);
+        Intent intent = new Intent(PlayerDashboard.this, QuizActivity.class);
+        intent.putExtra("tournamentId", t.getId());
+        startActivity(intent);
     }
 
     @Override

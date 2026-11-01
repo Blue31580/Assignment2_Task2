@@ -32,10 +32,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import cs.kirk.assignment2_task2.Login;
-import cs.kirk.assignment2_task2.Quiz.CreateTournament;
-import cs.kirk.assignment2_task2.Quiz.EditTournament;
 import cs.kirk.assignment2_task2.Quiz.Tournament;
-import cs.kirk.assignment2_task2.Quiz.TournamentAdapter;
 import cs.kirk.assignment2_task2.R;
 
 public class Admin_Dashboard extends AppCompatActivity {
